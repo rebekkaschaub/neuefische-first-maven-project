@@ -12,7 +12,7 @@ public class CovidRulesTest {
         int persons = 31;
 
         //WHEN
-        String string = CovidRules.personsInStore(31);
+        String string = CovidRules.checkIfTooManyPersons(31);
 
         //THEN
         assertEquals("Zu viele Personen", string);
@@ -25,7 +25,7 @@ public class CovidRulesTest {
         int persons = 31;
 
         //WHEN
-        String string = CovidRules.personsInStore(30);
+        String string = CovidRules.checkIfTooManyPersons(30);
 
         //THEN
         assertEquals("Maximale Personenzahl nicht überschritten" , string);

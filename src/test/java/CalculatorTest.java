@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
@@ -22,7 +21,7 @@ public class CalculatorTest {
 
     @Test
     @DisplayName("The \"greaterThan100\" method should return true")
-    public void greaterThan100Test(){
+    public void greaterThan100ShouldReturnTrue(){
         //GIVEN
         int value = 101;
 
@@ -33,4 +32,16 @@ public class CalculatorTest {
         assertTrue(res);
     }
 
+    @Test
+    @DisplayName("The \"greaterThan100\" method should return false")
+    public void greaterThan100ShouldReturnFalse(){
+        //GIVEN
+        int value = 100;
+
+        //WHEN
+        boolean res = Calculator.greaterThan100(value);
+
+        //THEN
+        assertFalse(res);
+    }
 }
